@@ -8,8 +8,8 @@ services:
   wk-postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: baenam
+      POSTGRES_PASSWORD: bnchs1122
       POSTGRES_DB: outline
     volumes:
       - ./data/pgdata:/var/lib/postgresql/data
@@ -46,8 +46,8 @@ services:
     image: warmherz/baenam-wiki:latest
     command: sh -c "yarn sequelize:migrate --env production-ssl-disabled && yarn start"
     environment:
-      - DATABASE_URL=postgres://user:pass@wk-postgres:5432/outline
-      - DATABASE_URL_TEST=postgres://user:pass@wk-postgres:5432/outline-test
+      - DATABASE_URL=postgres://baenam:bnchs1122@wk-postgres:5432/outline
+      - DATABASE_URL_TEST=postgres://baenam:bnchs1122@wk-postgres:5432/outline-test
       - REDIS_URL=redis://wk-redis:6379
       - AWS_S3_UPLOAD_BUCKET_NAME=outline-bucket
     env_file:
