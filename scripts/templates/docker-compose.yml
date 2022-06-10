@@ -43,7 +43,7 @@ services:
     networks:
       - ${NETWORKS}
   wk-outline:
-    image: warmherz/baenam-wiki:latest
+    image: outlinewiki/outline:0.63.0
     command: sh -c "yarn sequelize:migrate --env production-ssl-disabled && yarn start"
     environment:
       - DATABASE_URL=postgres://baenam:bnchs1122@wk-postgres:5432/outline
